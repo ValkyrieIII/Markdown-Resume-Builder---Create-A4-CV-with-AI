@@ -15,7 +15,7 @@ A bilingual A4 resume toolkit built with Marp. Maintain the content in Markdown 
 - Standards-based A4 PDF output
 - Chinese and English templates
 - Project-pinned Marp CLI
-- Command-line and macOS double-click export
+- Cross-platform CLI and Windows / macOS double-click export
 - Purpose-and-timestamp filenames
 - One-page and manual multi-page layouts
 - Personal resumes and generated files remain untracked by default
@@ -79,6 +79,14 @@ On macOS, you can also double-click:
 ```text
 scripts/export-resume.command
 ```
+
+On Windows, double-click `scripts/export-resume.cmd`. It installs dependencies
+and creates the Chinese template if `resume.md` is missing. Edit the file, then
+run the launcher again to export. For English, run `npm run init:en` first.
+
+If PowerShell blocks `npm.ps1`, use `npm.cmd` instead (for example,
+`npm.cmd run build`); no execution-policy change is needed. Paths containing
+spaces and Chinese characters are supported.
 
 ## Examples and previews
 

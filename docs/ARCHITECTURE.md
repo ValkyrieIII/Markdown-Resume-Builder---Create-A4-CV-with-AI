@@ -62,10 +62,11 @@ Page breaks should be placed between complete sections or entries. Always inspec
 ## Project scripts
 
 - `scripts/init-resume.mjs` creates a private working copy.
-- `scripts/export-pdf.mjs` validates paths and invokes the local Marp binary.
+- `scripts/export-pdf.mjs` validates paths and invokes the local Marp JavaScript entry with Node.js, avoiding shell wrappers on all platforms.
 - `scripts/export-interactive.mjs` creates timestamped exports.
 - `scripts/verify-project.mjs` validates required files, theme metadata, example configuration, and the private-file boundary.
 - `scripts/export-resume.command` provides a macOS double-click wrapper.
+- `scripts/export-resume.cmd` provides a Windows double-click wrapper.
 
 ## VS Code
 

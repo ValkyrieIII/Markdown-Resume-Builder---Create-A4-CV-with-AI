@@ -25,8 +25,9 @@ mkdirSync(dirname(outputPath), { recursive: true })
 const marpExecutable = join(
   projectRoot,
   'node_modules',
-  '.bin',
-  process.platform === 'win32' ? 'marp.cmd' : 'marp',
+  '@marp-team',
+  'marp-cli',
+  'marp-cli.js',
 )
 
 if (!existsSync(marpExecutable)) {
@@ -34,9 +35,10 @@ if (!existsSync(marpExecutable)) {
   process.exit(1)
 }
 
+// 直接运行 Node 入口，避免 Windows 的 .cmd 启动限制及 shell 路径转义。
 const result = spawnSync(
-  marpExecutable,
-  [inputPath, '--pdf', '--output', outputPath],
+  process.execPath,
+  [marpExecutable, inputPath, '--pdf', '--output', outputPath],
   {
     cwd: projectRoot,
     stdio: 'inherit',

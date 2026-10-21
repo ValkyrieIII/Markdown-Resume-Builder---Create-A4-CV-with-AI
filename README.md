@@ -15,7 +15,7 @@
 - 标准 A4 PDF
 - 中文与英文模板
 - 本地固定版本的 Marp CLI
-- 命令行与 macOS 双击导出
+- 跨平台命令行，以及 Windows / macOS 双击导出
 - “用途 + 时间戳”文件命名
 - 支持单页和手动分页
 - 默认不跟踪个人简历和生成文件
@@ -79,6 +79,13 @@ macOS 也可以双击：
 ```text
 scripts/export-resume.command
 ```
+
+Windows 可以双击 `scripts/export-resume.cmd`。首次运行会安装依赖，并在
+`resume.md` 不存在时创建中文模板；编辑保存后再次双击即可导出。
+如需英文模板，请先运行 `npm run init:en`。
+
+PowerShell 若提示禁止运行 `npm.ps1`，可将命令中的 `npm` 换成 `npm.cmd`
+（例如 `npm.cmd run build`），无需修改系统执行策略。支持包含中文和空格的路径。
 
 ## 示例与预览
 
